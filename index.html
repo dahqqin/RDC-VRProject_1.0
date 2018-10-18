@@ -36,6 +36,7 @@
         <img id="second_nav" crossorigin="anonymous" src="https://i.imgur.com/CWlxu3x.jpg">
         <img id="nav_depo" crossorigin="anonymous" src="https://i.imgur.com/vGJm36E.jpg">
         <img id="imagen_guia" crossorigin="anonymous" src="https://i.imgur.com/wNbOLcg.jpg">
+        <img id="crossmark" crossorigin="anonymous" src="https://i.imgur.com/Er8Lba5.png">
 
         <!-- Imagenes cuadradas con event_set. -->
         <script id="link" type="text/html">
@@ -86,6 +87,19 @@
         </a-entity>
         </script>
 
+        <!-- Cross Mark -->
+        <script id="cross_mark" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; height: 0.3; width: 0.3"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #click-sound"
+            animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.01 1.01 1.01"
+            event-set__entercross="_event: click; visible: false"
+            >
+            <a-entity class="link" id="guide_ent" template="src: #tmp_guide" data-src="#imagen_guia" data-thumb="#imagen_guia" position="-0.6 -1.7 0" visible="true"> </a-entity>
+        </a-entity>
+        </script>
+
         <!-- Question Mark -->
         <script id="qmark" type="text/html">
         <a-entity class="link"
@@ -93,9 +107,9 @@
             material="shader: flat; src: ${thumb}; alpha-test: 0.5"
             sound="on: click; src: #click-sound"
             animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.01 1.01 1.01"
-            event-set__enter="_event: click; _target: #guide_ent; visible: true"
+            event-set__entercross="_event: click; _target: #cross_merk; visible: true"
             sound="on: click; src: #click-sound">
-            <a-entity id="guide_ent" template="src: #tmp_guide" data-src="#imagen_guia" data-thumb="#imagen_guia" position="0 -1.7 0" visible="false"> </a-entity>
+            <a-entity id="cross_merk" template="src: #cross_mark" data-src="#crossmark" data-thumb="#crossmark" position="0.65 0 0" visible="false"> </a-entity>
         </a-entity>
         </script>
 
@@ -107,7 +121,6 @@
             sound="on: click; src: #click-sound">
             <a-entity id="cylinderText" template="src: #popup_door" data-src="#door" data-thumb="#door">
             </a-entity>
-
           </a-entity>
         </script>
 
@@ -126,7 +139,8 @@
         <a-entity class="link"
             geometry="primitive: plane; height: 3; width: 1.5"
             material="shader: flat; src: ${thumb}; alpha-test: 0.5"
-            sound="on: click; src: #click-sound">
+            sound="on: click; src: #click-sound"> 
+          </a-entity>
         </script>
       </a-assets>
 
