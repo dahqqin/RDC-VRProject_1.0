@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360 Tour - RDC</title>
+    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    <script src="components/set-image.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="city" crossorigin="anonymous" src="https://i.imgur.com/ZRZBwPe.jpg">
+        <img id="city-thumb" crossorigin="anonymous" src="https://i.imgur.com/5LHFC39.jpg">
+        <img id="cubes-thumb" crossorigin="anonymous" src="https://i.imgur.com/vJubs1X.jpg">
+        <img id="sechelt-thumb" crossorigin="anonymous" src="https://i.imgur.com/xiev5Ig.jpg">
+        <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+        <img id="cubes" crossorigin="anonymous" src="https://i.imgur.com/LF9GrA7.jpg">
+        <img id="sechelt" crossorigin="anonymous" src="https://i.imgur.com/lf6xb20.jpg">
+        <img id="welcome" crossorigin="anonymous" src="https://i.imgur.com/1DcM0gT.jpg">
+        <img id="door" crossorigin="anonymous" src="https://i.imgur.com/KlfyeyI.png">
+        <img id="zona" crossorigin="anonymous" src="https://i.imgur.com/KOdtyG8.png">
+        <img id="pregunta" crossorigin="anonymous" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Circle-question-red.svg/240px-Circle-question-red.svg.png">
+        <img id="mapa" crossorigin="anonymous" src="https://i.imgur.com/rrM3dqt.png">
+        <img id="flecha" crossorigin="anonymous" src="https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif">
+        <img id="wr" crossorigin="anonymous" src="https://i.imgur.com/ZSK0Sdf.jpg">
+        <img id="second_nav" crossorigin="anonymous" src="https://i.imgur.com/CWlxu3x.jpg">
+        <img id="nav_depo" crossorigin="anonymous" src="https://i.imgur.com/vGJm36E.jpg">
+        <img id="imagen_guia" crossorigin="anonymous" src="https://i.imgur.com/wNbOLcg.jpg">
+
+        <!-- Imagenes cuadradas con event_set. -->
+        <script id="link" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 1.1; width: 1.1"
+            material="shader: flat; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; target: #image-360; src: ${src}"
+            sound="on: click; src: #click-sound">
+          </a-entity>
+        </script>
+
+        <!-- Door to start -->
+        <script id="popup_door" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; width: 3; height: 0.75"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #click-sound"
+            position="0 -1.6 1"
+            animation__scale="property: scale; dir: alternate; dur: 1000;
+            easing: easeInSine; loop: true; to: 1.02 1 1.02">
+        </a-entity>
+        </script>
+
+        <!-- Warehouse -->
+        <script id="warehouse" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; width: 3.5; height: 1.75"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #click-sound"
+            position="0 1.6 0"
+            animation__scale="property: scale; dir: alternate; dur: 1000;
+            easing: easeInSine; loop: true; to: 1.02 1 1.02">
+        </a-entity>
+        </script>
+
+        <!-- Mapa RLA -->
+        <script id="maprla" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; width: 1; height: 3"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #click-sound"
+            set-image="on: click; target: #image-360; src: ${src}"
+            sound="on: click; src: #click-sound">
+        </a-entity>
+        </script>
+
+        <!-- Question Mark -->
+        <script id="qmark" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; height: 0.3; width: 0.3"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #click-sound"
+            animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.2 1.2 1.2"
+            event-set__enter="_event: mouseenter; _target: #wrcartel; visible: true"
+            event-set__leave="_event: mouseleave; _target: #wrcartel; visible: false"
+            sound="on: click; src: #click-sound">
+            <a-entity id="wrcartel" template="src: #warehouse" data-src="#wr" data-thumb="#wr" visible="false"></a-entity>
+        </a-entity>
+        </script>
+
+        <!-- Banner -->
+        <script id="link2" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; width: 4; height: 2"
+            material="shader: flat; src: ${thumb}"
+            event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+            event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false"
+            sound="on: click; src: #click-sound">
+            <a-entity id="cylinderText" template="src: #popup_door" data-src="#door" data-thumb="#door">
+            </a-entity>
+
+          </a-entity>
+        </script>
+
+        <!-- Down_arrow -->
+        <script id="downarrow" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; height: 2; width: 1"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            event-set__enter="_event: mouseenter; _target: #banner_zona; visible: true"
+            event-set__leave="_event: mouseleave; _target: #banner_zona; visible: false"
+            sound="on: click; src: #click-sound">
+        </script>
+
+        <!-- Guide_img -->
+        <script id="tmp_guide" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; height: 3; width: 1.5"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #click-sound">
+        </script>
+      </a-assets>
+
+
+      <!-- SKY 360. -->
+      <a-sky id="image-360" radius="10" src="#sechelt"></a-sky>
+
+      <!-- Ventana de inicio. Afuera. -->
+      <a-entity id="ventana_inicio">
+
+      <!-- Question mark depo. -->
+
+      <a-entity id="qmark" template="src: #qmark" data-src="#cubes" data-thumb="#pregunta" position="3.69 2 -3"></a-entity>
+      <!-- Test Arrows Nav. -->
+      <a-entity id="maprla" template="src: #maprla" data-src="#second_nav" data-thumb="#mapa" position="-6 -2 4" rotation="-90 0 -60" event-set__click="_event: click; _target: #ventana_inicio; visible: false">
+      </a-entity>
+
+      <a-entity id="second_test" template="src: #maprla" data-src="#nav_depo" data-thumb="#mapa" position="-7 -2 -3.5" rotation="-90 0 70" event-set__click="_event: click; _target: #ventana_inicio; visible: false">
+      </a-entity>
+
+      <!-- Links to sections. -->
+      <a-entity id="links" layout="layout: line; margin: 1.5" position="-1.5 -1 -4" >
+        <a-entity id="cubes" template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
+        <a-entity id="sechelt" template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity></a-entity>
+
+      <!-- Welcome banner. -->
+      <a-entity template="src: #link2" data-src="#welcome" data-thumb="#welcome" position="0 1.7 -4" > </a-entity>
+
+      <!-- Guide banner. -->
+      <a-entity template="src: #tmp_guide" data-src="#imagen_guia" data-thumb="#imagen_guia" position="5 0.5 -4" > </a-entity>
+
+      <!-- GIF arrows. -->
+      <a-entity geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0"></a-entity>
+
+      <a-entity geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 50 0"></a-entity>
+      </a-entity>
+
+
+      <!-- Camera + Cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
