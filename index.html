@@ -57,9 +57,9 @@
             geometry="primitive: plane; width: 3; height: 0.75"
             material="shader: flat; src: ${thumb}; alpha-test: 0.5"
             sound="on: click; src: #click-sound"
-            position="0 0 0"
+            position="0 -1.6 1"
             animation__scale="property: scale; dir: alternate; dur: 1000;
-            easing: easeInSine; loop: true; to: 1.01 1.01 1.01">
+            easing: easeInSine; loop: true; to: 1.02 1 1.02">
         </a-entity>
         </script>
 
@@ -94,11 +94,8 @@
             sound="on: click; src: #click-sound"
             animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.01 1.01 1.01"
             event-set__enter="_event: click; _target: #guide_ent; visible: true"
-            event-set__click="_event: click; _target: #cylinderText; visible: true"
             sound="on: click; src: #click-sound">
             <a-entity id="guide_ent" template="src: #tmp_guide" data-src="#imagen_guia" data-thumb="#imagen_guia" position="0 -1.7 0" visible="false"> </a-entity>
-            <a-entity id="cylinderText" template="src: #popup_door" data-src="#door" data-thumb="#door" position="-3 -1.9 0" visible="false">
-            </a-entity>
         </a-entity>
         </script>
 
@@ -107,7 +104,12 @@
         <a-entity class="link"
             geometry="primitive: plane; width: 4; height: 2"
             material="shader: flat; src: ${thumb}"
+            event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+            event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false"
             sound="on: click; src: #click-sound">
+            <a-entity id="cylinderText" template="src: #popup_door" data-src="#door" data-thumb="#door">
+            </a-entity>
+
           </a-entity>
         </script>
 
