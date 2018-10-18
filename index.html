@@ -13,9 +13,11 @@
     <script src="components/set-image.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+
   </head>
   <body>
-    <a-scene>
+    <a-scene cursor="rayOrigin: mouse">
       <a-assets>
         <img id="city" crossorigin="anonymous" src="https://i.imgur.com/ZRZBwPe.jpg">
         <img id="city-thumb" crossorigin="anonymous" src="https://i.imgur.com/5LHFC39.jpg">
@@ -55,9 +57,9 @@
             geometry="primitive: plane; width: 3; height: 0.75"
             material="shader: flat; src: ${thumb}; alpha-test: 0.5"
             sound="on: click; src: #click-sound"
-            position="0 -1.6 1"
+            position="0 0 0"
             animation__scale="property: scale; dir: alternate; dur: 1000;
-            easing: easeInSine; loop: true; to: 1.02 1 1.02">
+            easing: easeInSine; loop: true; to: 1.01 1.01 1.01">
         </a-entity>
         </script>
 
@@ -90,11 +92,13 @@
             geometry="primitive: plane; height: 0.3; width: 0.3"
             material="shader: flat; src: ${thumb}; alpha-test: 0.5"
             sound="on: click; src: #click-sound"
-            animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.2 1.2 1.2"
-            event-set__enter="_event: mouseenter; _target: #wrcartel; visible: true"
-            event-set__leave="_event: mouseleave; _target: #wrcartel; visible: false"
+            animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.01 1.01 1.01"
+            event-set__enter="_event: click; _target: #guide_ent; visible: true"
+            event-set__click="_event: click; _target: #cylinderText; visible: true"
             sound="on: click; src: #click-sound">
-            <a-entity id="wrcartel" template="src: #warehouse" data-src="#wr" data-thumb="#wr" visible="false"></a-entity>
+            <a-entity id="guide_ent" template="src: #tmp_guide" data-src="#imagen_guia" data-thumb="#imagen_guia" position="0 -1.7 0" visible="false"> </a-entity>
+            <a-entity id="cylinderText" template="src: #popup_door" data-src="#door" data-thumb="#door" position="-3 -1.9 0" visible="false">
+            </a-entity>
         </a-entity>
         </script>
 
@@ -103,12 +107,7 @@
         <a-entity class="link"
             geometry="primitive: plane; width: 4; height: 2"
             material="shader: flat; src: ${thumb}"
-            event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
-            event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false"
             sound="on: click; src: #click-sound">
-            <a-entity id="cylinderText" template="src: #popup_door" data-src="#door" data-thumb="#door">
-            </a-entity>
-
           </a-entity>
         </script>
 
@@ -140,7 +139,7 @@
 
       <!-- Question mark depo. -->
 
-      <a-entity id="qmark" template="src: #qmark" data-src="#cubes" data-thumb="#pregunta" position="3.69 2 -3"></a-entity>
+      <a-entity id="qmark" template="src: #qmark" data-src="#cubes" data-thumb="#pregunta" position="3 2 -3"></a-entity>
       <!-- Test Arrows Nav. -->
       <a-entity id="maprla" template="src: #maprla" data-src="#second_nav" data-thumb="#mapa" position="-6 -2 4" rotation="-90 0 -60" event-set__click="_event: click; _target: #ventana_inicio; visible: false">
       </a-entity>
@@ -158,17 +157,15 @@
       <a-entity template="src: #link2" data-src="#welcome" data-thumb="#welcome" position="0 1.7 -4" > </a-entity>
 
       <!-- Guide banner. -->
-      <a-entity template="src: #tmp_guide" data-src="#imagen_guia" data-thumb="#imagen_guia" position="5 0.5 -4" > </a-entity>
+      
 
       <!-- GIF arrows. -->
       <a-entity geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0"></a-entity>
 
       <a-entity geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 50 0"></a-entity>
       </a-entity>
-
-
       <!-- Camera + Cursor. -->
-      <a-entity camera look-controls>
+      <a-entity camera look-controls mouse-cursor>
         <a-cursor id="cursor"
           animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
