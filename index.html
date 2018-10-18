@@ -104,8 +104,6 @@
         <a-entity class="link"
             geometry="primitive: plane; width: 4; height: 2"
             material="shader: flat; src: ${thumb}"
-            event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
-            event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false"
             sound="on: click; src: #click-sound">
             <a-entity id="cylinderText" template="src: #popup_door" data-src="#door" data-thumb="#door">
             </a-entity>
