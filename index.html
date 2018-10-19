@@ -37,6 +37,7 @@
         <img id="nav_depo" crossorigin="anonymous" src="https://i.imgur.com/vGJm36E.jpg">
         <img id="imagen_guia" crossorigin="anonymous" src="https://i.imgur.com/wNbOLcg.jpg">
         <img id="crossmark" crossorigin="anonymous" src="https://i.imgur.com/Er8Lba5.png">
+        <img id="back" crossorigin="anonymous" src="https://i.imgur.com/e6UEUwF.png">
 
         <!-- Imagenes cuadradas con event_set. -->
         <script id="link" type="text/html">
@@ -82,8 +83,17 @@
             geometry="primitive: plane; width: 1; height: 3"
             material="shader: flat; src: ${thumb}; alpha-test: 0.5"
             sound="on: click; src: #click-sound"
-            set-image="on: click; target: #image-360; src: ${src}"
-            sound="on: click; src: #click-sound">
+            set-image="on: click; target: #image-360; src: ${src}">
+        </a-entity>
+        </script>
+
+        <!-- Mapa RLA -->
+        <script id="back_btn" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; width: 3; height: 3"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #click-sound"
+            set-image="on: click; target: #image-360; src: ${src}">
         </a-entity>
         </script>
 
@@ -155,10 +165,10 @@
 
       <a-entity id="qmark" template="src: #qmark" data-src="#cubes" data-thumb="#pregunta" position="3 2 -3"></a-entity>
       <!-- Test Arrows Nav. -->
-      <a-entity id="maprla" template="src: #maprla" data-src="#second_nav" data-thumb="#mapa" position="-6 -2 4" rotation="-90 0 -60" event-set__click="_event: click; _target: #ventana_inicio; visible: false">
+      <a-entity id="maprla" template="src: #maprla" data-src="#second_nav" data-thumb="#mapa" position="-6 -2 4" rotation="-90 0 -60" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ventana_two; visible: true">
       </a-entity>
 
-      <a-entity id="second_test" template="src: #maprla" data-src="#nav_depo" data-thumb="#mapa" position="-7 -2 -3.5" rotation="-90 0 70" event-set__click="_event: click; _target: #ventana_inicio; visible: false">
+      <a-entity id="second_test" template="src: #maprla" data-src="#nav_depo" data-thumb="#mapa" position="-7 -2 -3.5" rotation="-90 0 70" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ventana_two; visible: true">
       </a-entity>
 
       <!-- Links to sections. -->
@@ -177,6 +187,14 @@
       <a-entity geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0"></a-entity>
 
       <a-entity geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 50 0"></a-entity>
+
+      
+
+      </a-entity>
+
+      <a-entity id="ventana_two">
+
+
       </a-entity>
       <!-- Camera + Cursor. -->
       <a-entity camera look-controls mouse-cursor>
