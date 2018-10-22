@@ -123,6 +123,18 @@
         </a-entity>
         </script>
 
+        <!-- Cross Mark -->
+        <script id="back_mark" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; height: 0.3; width: 0.3"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #click-sound"
+            animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.01 1.01 1.01"
+            set-image="on: click; target: #image-360; src: ${src}"
+            >
+        </a-entity>
+        </script>
+
         <!-- Banner -->
         <script id="link2" type="text/html">
         <a-entity class="link"
@@ -165,7 +177,7 @@
 
       <a-entity id="qmark" template="src: #qmark" data-src="#cubes" data-thumb="#pregunta" position="3 2 -3"></a-entity>
       <!-- Test Arrows Nav. -->
-      <a-entity id="maprla" template="src: #maprla" data-src="#second_nav" data-thumb="#mapa" position="-6 -2 4" rotation="-90 0 -60" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ventana_two; visible: true">
+      <a-entity id="maprla" template="src: #maprla" data-src="#second_nav" data-thumb="#mapa" position="-6 -2 4" rotation="-90 0 -60" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ventana_three; visible: true">
       </a-entity>
 
       <a-entity id="second_test" template="src: #maprla" data-src="#nav_depo" data-thumb="#mapa" position="-7 -2 -3.5" rotation="-90 0 70" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ventana_two; visible: true">
@@ -188,12 +200,19 @@
 
       <a-entity geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 50 0"></a-entity>
 
-      
+
 
       </a-entity>
 
-      <a-entity id="ventana_two">
+      <a-entity id="ventana_two" visible="false">
 
+      <a-entity id="back_mark" template="src: #back_mark" data-src="#sechelt" data-thumb="#back" position="-3 1 0.2" rotation="0 90 0" event-set__click="_event: click; _target: #ventana_inicio; visible: true" event-set__click2="_event: click; _target: #ventana_two; visible: false"></a-entity>
+
+      </a-entity>
+
+      <a-entity id="ventana_three" visible="false" event-set__click2="_event: click; visible: false">
+
+      <a-entity id="back_mark_3" template="src: #back_mark" data-src="#sechelt" data-thumb="#back" position="-3 1.13 -1" rotation="0 90 0" event-set__click="_event: click; _target: #ventana_inicio; visible: true" ></a-entity>
 
       </a-entity>
       <!-- Camera + Cursor. -->
