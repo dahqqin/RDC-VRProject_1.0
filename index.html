@@ -38,7 +38,9 @@
         <img id="imagen_guia" crossorigin="anonymous" src="https://i.imgur.com/wNbOLcg.jpg">
         <img id="crossmark" crossorigin="anonymous" src="https://i.imgur.com/Er8Lba5.png">
         <img id="back" crossorigin="anonymous" src="https://i.imgur.com/e6UEUwF.png">
-        <video id="ricoh2020" autoplay loop="true" src="https://ucarecdn.com/fadab25d-0b3a-45f7-8ef5-85318e92a261/">
+        <video id="ricoh2020" crossorigin="anonymous" autoplay loop="false" webkit-playsinline playsinline>
+          <source type="video/mp4"
+               src="https://ucarecdn.com/aab47245-d89d-4df4-80b5-223acd95a218/" />
         </video>
 
         <!-- Imagenes cuadradas con event_set. -->
@@ -62,7 +64,7 @@
             material="shader: flat; src: ${thumb}; alpha-test: 0.5"
             sound="on: click; src: #click-sound"
             position="0 -1.6 1"
-            animation__scale="property: scale; dir: alternate; dur: 1000;
+            animation__scale="property: scale; dir: alternate; dur: 1000
             easing: easeInSine; loop: true; to: 1.02 1 1.02">
         </a-entity>
         </script>
@@ -174,7 +176,6 @@
 
       <!-- Ventana de inicio. Afuera. -->
       <a-entity id="ventana_inicio">
-      <a-video src="#ricoh2020" width="16" height="9" position="0 0 0"></a-video>
       <!-- Question mark depo. -->
 
       <a-entity id="qmark" template="src: #qmark" data-src="#cubes" data-thumb="#pregunta" position="3 2 -3"></a-entity>
@@ -184,15 +185,18 @@
 
       <a-entity id="second_test" template="src: #maprla" data-src="#nav_depo" data-thumb="#mapa" position="-7 -2 -3.5" rotation="-90 0 70" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ventana_two; visible: true">
       </a-entity>
-
+      
+      <a-video id= "vid" src="#ricoh2020" width="6" height="3.2" position="0 1.2 -4" visible="false"></a-video>
       <!-- Links to sections. -->
       <a-entity id="links" layout="layout: line; margin: 1.5" position="-1.5 -1 -4" >
-        <a-entity id="cubes" template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
+
+        <a-entity id="cubes" template="src: #link" data-src="#sechelt" data-thumb="#cubes-thumb" event-set__click="_event: click; _target: #vid; visible: true" event-set__click2="_event: click; _target: #welcomm; visible: false">
+        </a-entity>
         <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
         <a-entity id="sechelt" template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity></a-entity>
 
       <!-- Welcome banner. -->
-      <a-entity template="src: #link2" data-src="#welcome" data-thumb="#welcome" position="0 1.7 -4" > </a-entity>
+      <a-entity id="welcomm" template="src: #link2" data-src="#welcome" data-thumb="#welcome" position="0 1.7 -4" > </a-entity>
 
       <!-- Guide banner. -->
       
