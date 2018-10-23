@@ -36,7 +36,7 @@
         <img id="IMG_guia" crossorigin="anonymous" src="https://i.imgur.com/wNbOLcg.jpg">
         <img id="IMG_crossmark" crossorigin="anonymous" src="https://i.imgur.com/Er8Lba5.png">
         <img id="IMG_back" crossorigin="anonymous" src="https://i.imgur.com/e6UEUwF.png">
-        <video id="VID_ricoh2020" crossorigin="anonymous" autoplay loop="true" webkit-playsinline playsinline>
+        <video id="VID_ricoh2020" crossorigin="anonymous" autoplay loop="false" webkit-playsinline playsinline>
           <source type="video/mp4"
                src="https://ucarecdn.com/aab47245-d89d-4df4-80b5-223acd95a218/" />
         </video>
@@ -99,6 +99,17 @@
             event-set__entercross="_event: click; visible: false"
             >
             <a-entity class="link" id="guide_ent" template="src: #TMP_guide_v" data-src="#IMG_guia" data-thumb="#IMG_guia" position="-0.6 -1.7 0" visible="true"> </a-entity>
+        </a-entity>
+        </script>
+
+        <!-- Cross Mark -->
+        <script id="TMP_close_video" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; height: 0.3; width: 0.3"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #SND_click-sound"
+            animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.01 1.01 1.01"
+            event-set__entercross="_event: click; visible: false">
         </a-entity>
         </script>
 
@@ -168,15 +179,17 @@
       <!-- ARROWS NAV. -->
       <a-entity id="second_test" template="src: #TMP_navigation" data-src="#IMG_third_nav_afu" data-thumb="#IMG_navigation" position="-7 -2 -3.5" rotation="-90 0 70" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #POV_1_AFU; visible: true">
       </a-entity>
-      
+  
       <!-- VIDEO RICOH2020 -->
-      <a-video id= "vid" src="#VID_ricoh2020" width="6" height="3.2" position="0 1.2 -4" visible="false"></a-video>
+      <a-video id= "vid" src="#VID_ricoh2020" width="6" height="3.2" position="0 1.2 -4" visible="false">
+          <a-entity id="cross_merk" template="src: #TMP_close_video" data-src="#IMG_crossmark" data-thumb="#IMG_crossmark" position="2.75 1.35 0.1" visible="true" event-set__click="_event: click; _target: #vid; visible: false" event-set__click2="_event: click; _target: #welcomm; visible: true" event-set__click3="_event: click; _target: #ent_control; visible: false"> </a-entity>
+      </a-video>
 
       <!-- 3 SQUARES LINKED. -->
       <a-entity id="links" layout="layout: line; margin: 1.5" position="-1.5 -1 -4" >
 
         <!-- FIRST LINK -->
-        <a-entity id="cubes" template="src: #link" data-src="#IMG_afuera" data-thumb="#IMG_SQ_recycling" event-set__click="_event: click; _target: #vid; visible: true" event-set__click2="_event: click; _target: #welcomm; visible: false">
+        <a-entity id="cubes" template="src: #link" data-src="#IMG_afuera" data-thumb="#IMG_SQ_recycling" event-set__click="_event: click; _target: #vid; visible: true" event-set__click2="_event: click; _target: #welcomm; visible: false" event-set__click3="_event: click; _target: #ent_control; visible: true">
         </a-entity>
         <!-- SECOND LINK -->
         <a-entity template="src: #link" data-src="#IMG_city" data-thumb="#IMG_SQ_map"></a-entity>
@@ -186,8 +199,12 @@
       <!-- IMG_Welcome banner. -->
       <a-entity id="welcomm" template="src: #TMP_banner" data-src="#IMG_welcome" data-thumb="#IMG_welcome" position="0 1.7 -4" > </a-entity>
 
+
+      
       <!-- Guide banner. -->
+      <a-entity id="ent_control" position="0 -0.326 0" visible="false">
       <a-entity id="controls" video-controls="src:#VID_ricoh2020" size="3" ></a-entity>
+    </a-entity>
       <!-- GIF arrows. -->
       <a-entity geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0"></a-entity>
 
