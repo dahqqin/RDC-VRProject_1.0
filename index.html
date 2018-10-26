@@ -36,10 +36,24 @@
         <img id="IMG_guia" crossorigin="anonymous" src="https://i.imgur.com/wNbOLcg.jpg">
         <img id="IMG_crossmark" crossorigin="anonymous" src="https://i.imgur.com/Er8Lba5.png">
         <img id="IMG_back" crossorigin="anonymous" src="https://i.imgur.com/e6UEUwF.png">
-        <video id="VID_ricoh2020" crossorigin="anonymous" autoplay loop="false" webkit-playsinline playsinline>
+        <video id="VID_ricoh2020" crossorigin="anonymous" autoplay loop="true" webkit-playsinline playsinline>
           <source type="video/mp4"
                src="https://ucarecdn.com/aab47245-d89d-4df4-80b5-223acd95a218/" />
         </video>
+        <video id="VID_desplazamiento" crossorigin="anonymous" autoplay loop="true" webkit-playsinline playsinline>
+          <source type="video/mp4"
+               src="https://ucarecdn.com/2c86b74e-eed3-4aa5-8ba8-4196c4c42524/" />
+        </video>
+        <img id="IMG_afuera_nuevo" crossorigin="anonymous" src="https://i.imgur.com/qSoLsvw.jpg">
+        <img id="IMG_sala_capacitacion" crossorigin="anonymous" src="https://i.imgur.com/bSRZ7sv.jpg">
+        <img id="IMG_puerta_ccc" crossorigin="anonymous" src="https://i.imgur.com/8aZCL6t.jpg">
+        <img id="IMG_puerta_rdc" crossorigin="anonymous" src="https://i.imgur.com/Aq2amyS.jpg">
+        <img id="IMG_puerta_dep" crossorigin="anonymous" src="https://i.imgur.com/8msmS19.jpg">
+        <img id="IMG_recepcion" crossorigin="anonymous" src="https://i.imgur.com/RoMKfCe.jpg">
+        <img id="IMG_escalera_dep" crossorigin="anonymous" src="https://i.imgur.com/eWkRyWK.jpg">
+        <img id="IMG_depo_pasillo_1" crossorigin="anonymous" src="https://i.imgur.com/KVR0V3O.jpg">
+        <img id="IMG_depo_pasillo_2" crossorigin="anonymous" src="https://i.imgur.com/lqM9umQ.jpg">
+
 
         <!-- Imagenes cuadradas con event_set. -->
         <script id="link" type="text/html">
@@ -203,12 +217,12 @@
       
       <!-- Guide banner. -->
       <a-entity id="ent_control" position="0 -0.326 0" visible="false">
-      <a-entity id="controls" video-controls="src:#VID_ricoh2020" size="3" ></a-entity>
+      <a-entity id="controls" video-controls="src:#VID_desplazamiento" size="3" ></a-entity>
     </a-entity>
       <!-- GIF arrows. -->
-      <a-entity geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0"></a-entity>
+      <a-entity geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0" set-image="on: click; target: #image-360; src: #IMG_puerta_rdc" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ROOM_1_PUERTA_RDC; visible: true"></a-entity>
 
-      <a-entity geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 50 0"></a-entity>
+      <a-entity geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 50 0" set-image="on: click; target: #image-360; src: #IMG_puerta_dep" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ROOM_1_PUERTA_DEP; visible: true"></a-entity>
 
 
 
@@ -224,8 +238,6 @@
 
       </a-entity>
 
-      <!-- END OF FIRST POV -->
-
       <!-- SECOND POINT OF VIEW -->
 
       <a-entity id="POV_2_AFU" visible="false" event-set__click2="_event: click; visible: false">
@@ -234,18 +246,30 @@
 
       </a-entity>
 
-      <!-- END OF SECOND POV -->
+      <!-- PUERTA DEPOSITO -->
+
+      <a-entity id="ROOM_1_PUERTA_DEP" visible="false">
+
+      <a-entity id="gif_enter_dep" geometry="primitive:box;" position="-4 1 -0.2" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 0 -10" set-image="on: click; target: #image-360; src: #IMG_escalera_dep" event-set__click="_event: click; _target: #ROOM_1_PUERTA_DEP; visible: false" event-set__click2="_event: click; _target: #ROOM_3_ESCALERA_DEP; visible: true"></a-entity>
+
+      </a-entity>
+
+      <a-entity id="ROOM_2_PUERTA_RDC" visible="false">
+
+      </a-entity>
+
+      <a-entity id="ROOM_3_ESCALERA_DEP" visible="false">
+
+      <a-entity id="gif_enter_esc" geometry="primitive:box;" position="-6 3 -1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 -10 -23" set-image="on: click; target: #image-360; src: #VID_desplazamiento" event-set__click="_event: click; _target: #ROOM_3_ESCALERA_DEP; visible: false" event-set__click2="_event: click; _target: #ROOM_4_PASILLO_DEP_1; visible: true"></a-entity>
+
+      </a-entity>
+
+      <a-entity id="ROOM_3_PASILLO_DEP_1" visible="false">
+
+      </a-entity>
       
       <!-- CAMERA + CURSOR. -->
-      <a-entity camera look-controls mouse-cursor>
-        <a-cursor id="cursor"
-          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
-          event-set__1="_event: mouseenter; color: springgreen"
-          event-set__2="_event: mouseleave; color: black"
-          fuse="false"
-          raycaster="objects: .link"></a-cursor>
-      </a-entity>
+      <a-entity camera look-controls mouse-cursor></a-entity>
     </a-scene>
   </body>
 </html>
