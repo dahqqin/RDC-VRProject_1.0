@@ -38,7 +38,7 @@
         <img id="IMG_back" crossorigin="anonymous" src="https://i.imgur.com/e6UEUwF.png">
         <video id="VID_ricoh2020" crossorigin="anonymous" autoplay loop="true" preload="true" webkit-playsinline playsinline>
           <source type="video/mp4"
-               src="ricoh2020.mp4" />
+               src="/ricoh2020.mp4" />
         </video>
         <video id="VID_desplazamiento" crossorigin="anonymous" autoplay loop="true" preload="true" webkit-playsinline playsinline>
           <source type="video/mp4"
@@ -217,7 +217,7 @@
       
       <!-- Guide banner. -->
       <a-entity id="ent_control" position="0 -0.326 0" visible="false">
-      <a-entity id="controls" video-controls="src:#VID_desplazamiento" size="3" ></a-entity>
+      <a-entity id="controls" video-controls="src:#VID_ricoh2020" size="3" ></a-entity>
     </a-entity>
       <!-- GIF arrows. -->
       <a-entity geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0" set-image="on: click; target: #image-360; src: #IMG_puerta_rdc" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ROOM_1_PUERTA_RDC; visible: true"></a-entity>
