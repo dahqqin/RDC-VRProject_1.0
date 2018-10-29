@@ -193,7 +193,7 @@
       </a-entity>
   
       <!-- VIDEO RICOH2020 -->
-      <a-video id= "vid" src="#VID_ricoh2020" width="6" height="3.2" position="0 1.2 -4" visible="false">
+      <a-video id= "vid" src="#VID_ricoh2020" width="6" height="3.2" position="0 1.2 -4" visible="false" autoplay="false" loop="false" >
           <a-entity id="cross_merk" template="src: #TMP_close_video" data-src="#IMG_crossmark" data-thumb="#IMG_crossmark" position="2.75 1.35 0.1" visible="true" event-set__click="_event: click; _target: #vid; visible: false" event-set__click2="_event: click; _target: #welcomm; visible: true" event-set__click3="_event: click; _target: #ent_control; visible: false"> </a-entity>
       </a-video>
 
@@ -216,7 +216,8 @@
       <!-- Guide banner. -->
       <a-entity id="ent_control" position="0 -0.326 0" visible="false">
       <a-entity id="controls" video-controls="src:#VID_ricoh2020" size="3" ></a-entity>
-    </a-entity>
+      </a-entity>
+
       <!-- GIF arrows. -->
       <a-entity geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0" set-image="on: click; target: #image-360; src: #IMG_puerta_rdc" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ROOM_1_PUERTA_RDC; visible: true"></a-entity>
 
@@ -273,7 +274,7 @@
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
           event-set__1="_event: mouseenter; color: springgreen"
           event-set__2="_event: mouseleave; color: black"
-          fuse="true"
+          fuse="false"
           raycaster="objects: .link"></a-cursor>
       </a-entity>
     </a-scene>
