@@ -57,6 +57,13 @@
         <img id="RSC_silla_lu" crossorigin="anonymous" src="https://i.imgur.com/IqWNGky.jpg">
         <img id="RSC_silla_clau" crossorigin="anonymous" src="https://i.imgur.com/uHY4dNO.jpg">
         <img id="RSC_pasillo_2" crossorigin="anonymous" src="https://i.imgur.com/fKAV2WZ.jpg">
+        <img id="IMG_RDC_ENTRADA" crossorigin="anonymous" src="https://i.imgur.com/qKPuYzY.jpg">
+        <img id="IMG_RDC_TRAINING" crossorigin="anonymous" src="https://i.imgur.com/KrLGomF.jpg">
+        <img id="IMG_RDC_PPISO" crossorigin="anonymous" src="https://i.imgur.com/uZirarP.jpg">
+        <img id="IMG_RDC_PALTA" crossorigin="anonymous" src="https://i.imgur.com/KUhSm2h.jpg">
+        <img id="IMG_RDC_CERTS" crossorigin="anonymous" src="https://i.imgur.com/YSrKIIP.jpg">
+        <img id="IMG_RDC_ICHI" crossorigin="anonymous" src="https://i.imgur.com/vV7a086.jpg">
+
 
         <!-- Imagenes cuadradas con event_set. -->
         <script id="link" type="text/html">
@@ -195,11 +202,11 @@
       <a-entity id="qmark" template="src: #TMP_qmark" data-src="#cubes" data-thumb="#IMG_pregunta" position="3 2 -3" sound="on: click; src: url(https://ucarecdn.com/c10bed75-5a58-43b4-987b-9199d800ddea/; volume: 2)"></a-entity>
      
      <!-- ARROWS NAV. -->
-      <a-entity id="navigation" template="src: #TMP_navigation" data-src="#IMG_second_nav_afu" data-thumb="#IMG_navigation" position="-6 -2 4" rotation="-90 0 -60" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #POV_2_AFU; visible: true">
+      <a-entity id="navigation" template="src: #TMP_navigation" data-src="#IMG_second_nav_afu" data-thumb="#IMG_navigation" position="-6 -2 4" rotation="-90 0 -60" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #POV_2_AFU; position: 0 0 0">
       </a-entity>
 
       <!-- ARROWS NAV. -->
-      <a-entity id="second_test" template="src: #TMP_navigation" data-src="#IMG_third_nav_afu" data-thumb="#IMG_navigation" position="-7 -2 -3.5" rotation="-90 0 70" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #POV_1_AFU; visible: true">
+      <a-entity id="second_test" template="src: #TMP_navigation" data-src="#IMG_third_nav_afu" data-thumb="#IMG_navigation" position="-7 -2 -3.5" rotation="-90 0 70" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #POV_1_AFU; position: 0 0 0">
       </a-entity>
 
   
@@ -230,9 +237,9 @@
       </a-entity>
 
       <!-- GIF arrows. -->
-      <a-entity class="link" geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0" set-image="on: click; target: #image-360; src: #RSC_afuera" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #RSC_af; visible: true"></a-entity>
+      <a-entity class="link" geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0" set-image="on: click; target: #image-360; src: #IMG_RDC_ENTRADA" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_entrada; position: 0 0 0"></a-entity>
 
-      <a-entity class="link" geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="5 58 0" set-image="on: click; target: #image-360; src: #IMG_puerta_dep" event-set__click="_event: click; _target: #ventana_inicio; visible: false" event-set__click2="_event: click; _target: #ROOM_1_PUERTA_DEP; visible: true"></a-entity>
+      <a-entity class="link" geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="5 58 0" set-image="on: click; target: #image-360; src: #IMG_puerta_dep" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #ROOM_1_PUERTA_DEP; position: 0 0 0"></a-entity>
 
 
       </a-entity>
@@ -241,35 +248,35 @@
 
       <!-- FIRST POINT OF VIEW -->
 
-      <a-entity id="POV_1_AFU" visible="false">
+      <a-entity id="POV_1_AFU" position="99 99 99">
 
-      <a-entity id="IMG_back_mark" template="src: #TMP_back_mark" data-src="#IMG_afuera" data-thumb="#IMG_back" position="-3 1 0.2" rotation="0 90 0" event-set__click="_event: click; _target: #ventana_inicio; visible: true" event-set__click2="_event: click; _target: #POV_1_AFU; visible: false"></a-entity>
+      <a-entity id="IMG_back_mark" template="src: #TMP_back_mark" data-src="#IMG_afuera" data-thumb="#IMG_back" position="-3 1 0.2" rotation="0 90 0" event-set__click="_event: click; _target: #ventana_inicio; position: 0 0 0" event-set__click2="_event: click; _target: #POV_1_AFU; position: 99 99 99"></a-entity>
 
       </a-entity>
 
       <!-- SECOND POINT OF VIEW -->
 
-      <a-entity id="POV_2_AFU" visible="false" event-set__click2="_event: click; visible: false">
+      <a-entity id="POV_2_AFU" event-set__click2="_event: click; position: 99 99 99" position="99 99 99">
 
-      <a-entity id="IMG_back_mark_3" template="src: #TMP_back_mark" data-src="#IMG_afuera" data-thumb="#IMG_back" position="-3 1.13 -1" rotation="0 90 0" event-set__click="_event: click; _target: #ventana_inicio; visible: true" ></a-entity>
+      <a-entity id="IMG_back_mark_3" template="src: #TMP_back_mark" data-src="#IMG_afuera" data-thumb="#IMG_back" position="-3 1.13 -1" rotation="0 90 0" event-set__click="_event: click; _target: #ventana_inicio; position: 0 0 0" ></a-entity>
 
       </a-entity>
 
       <!-- PUERTA DEPOSITO -->
 
-      <a-entity id="ROOM_1_PUERTA_DEP" visible="false">
+      <a-entity id="ROOM_1_PUERTA_DEP" position="99 99 99">
 
-      <a-entity id="gif_enter_dep" geometry="primitive:box;" position="-4 1 -0.2" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 0 -10" set-image="on: click; target: #image-360; src: #IMG_escalera_dep" event-set__click="_event: click; _target: #ROOM_1_PUERTA_DEP; visible: false" event-set__click2="_event: click; _target: #ROOM_3_ESCALERA_DEP; visible: true"></a-entity>
-
-      </a-entity>
-
-      <a-entity id="ROOM_2_PUERTA_RDC" visible="false">
+      <a-entity id="gif_enter_dep" geometry="primitive:box;" position="-4 1 -0.2" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 0 -10" set-image="on: click; target: #image-360; src: #IMG_escalera_dep" event-set__click="_event: click; _target: #ROOM_1_PUERTA_DEP; position: 99 99 99" event-set__click2="_event: click; _target: #ROOM_3_ESCALERA_DEP; position: 0 0 0"></a-entity>
 
       </a-entity>
 
-      <a-entity id="ROOM_3_ESCALERA_DEP" visible="false">
+      <a-entity id="ROOM_2_PUERTA_RDC" position="99 99 99">
 
-      <a-entity id="gif_enter_esc" geometry="primitive:box;" position="-6 3 -1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 -10 -23" set-image="on: click; target: #image-360; src: #IMG_depo_pasillo_1" event-set__click="_event: click; _target: #ROOM_3_ESCALERA_DEP; visible: false" event-set__click2="_event: click; _target: #ROOM_4_PASILLO_DEP_1; visible: true"></a-entity>
+      </a-entity>
+
+      <a-entity id="ROOM_3_ESCALERA_DEP" position="99 99 99">
+
+      <a-entity id="gif_enter_esc" geometry="primitive:box;" position="-6 3 -1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 -10 -23" set-image="on: click; target: #image-360; src: #IMG_depo_pasillo_1" event-set__click="_event: click; _target: #ROOM_3_ESCALERA_DEP; position: 99 99 99" event-set__click2="_event: click; _target: #ROOM_4_PASILLO_DEP_1; position: 0 0 0"></a-entity>
 
       </a-entity>
 
@@ -280,40 +287,76 @@
 
 
       <!-- NAVIGATION RSC -->
-      <a-entity id="RSC_af" visible="false">
+      <a-entity id="RSC_af" position="99 99 99">
 
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6 1 0" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-4 0 -20" set-image="on: click; target: #image-360; src: #RSC_adentro" event-set__click="_event: click; visible: false" event-set__click2="_event: click; _target: #RSC_ad; visible: true"></a-entity>
-
-      </a-entity>
-
-      <a-entity id="RSC_ad" visible="false">
-
-      <a-entity id="navigation" template="src: #TMP_navigation" data-src="#RSC_pasillo_lu" data-thumb="#IMG_navigation" position="-7 -2 0.2" rotation="-90 0 -90" event-set__click="_event: click; _target: #RSC_ad; visible: false" event-set__click2="_event: click; _target: #pasillo_rsc_1; visible: true"></a-entity>
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6 1 0" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-4 0 -20" set-image="on: click; target: #image-360; src: #RSC_adentro" event-set__click="_event: click; position: 99 99 99" event-set__click2="_event: click; _target: #RSC_ad; position: 0 0 0"></a-entity>
 
       </a-entity>
 
-      <a-entity id="pasillo_rsc_1" visible="false">
+      <a-entity id="RSC_ad" position="99 99 99">
 
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-5 1.5 -7" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="10 34 0" set-image="on: click; target: #image-360; src: #RSC_silla_lu" event-set__click="_event: click; visible: false" event-set__click2="_event: click; _target: #silla_lu_1; visible: true"></a-entity>
+      <a-entity id="navigation" template="src: #TMP_navigation" data-src="#RSC_pasillo_lu" data-thumb="#IMG_navigation" position="-7 -2 0.2" rotation="-90 0 -90" event-set__click="_event: click; _target: #RSC_ad; position: 99 99 99" event-set__click2="_event: click; _target: #pasillo_rsc_1; position: 0 0 0"></a-entity>
+
+      </a-entity>
+
+      <a-entity id="pasillo_rsc_1" position="99 99 99">
+
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-5 1.5 -7" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="10 34 0" set-image="on: click; target: #image-360; src: #RSC_silla_lu" event-set__click="_event: click; position: 99 99 99" event-set__click2="_event: click; _target: #silla_lu_1; position: 0 0 0"></a-entity>
 
       </a-entity>
       
-      <a-entity id="silla_lu_1" visible="false">
+      <a-entity id="silla_lu_1" position="99 99 99">
 
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-0.5 -2 -7" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-10 0 0" set-image="on: click; target: #image-360; src: #RSC_silla_clau" event-set__click="_event: click; visible: false" event-set__click2="_event: click; _target: #silla_clau; visible: true"></a-entity>
-
-      </a-entity>
-
-      <a-entity id="silla_clau" visible="false">
-
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-7 -0.7 1.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-5 10 5" set-image="on: click; target: #image-360; src: #RSC_pasillo_2" event-set__click="_event: click; visible: false" event-set__click2="_event: click; _target: #ultima; visible: true"></a-entity>
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-0.5 -2 -7" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-10 0 0" set-image="on: click; target: #image-360; src: #RSC_silla_clau" event-set__click="_event: click; position: 99 99 99" event-set__click2="_event: click; _target: #silla_clau; position: 0 0 0"></a-entity>
 
       </a-entity>
 
-      <a-entity id="ultima" visible="false">
+      <a-entity id="silla_clau" position="99 99 99">
 
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-0.5 -0.7 -7" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-5 10 5" set-image="on: click; target: #IMG_afuera; src: #RSC_pasillo_2" event-set__click="_event: click; visible: false" event-set__click2="_event: click; _target: #ventana_inicio; visible: true"></a-entity>
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-7 -0.7 1.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-5 10 5" set-image="on: click; target: #image-360; src: #RSC_pasillo_2" event-set__click="_event: click; position: 99 99 99" event-set__click2="_event: click; _target: #ultima; position: 0 0 0"></a-entity>
 
+      </a-entity>
+
+      <a-entity id="ultima" position="99 99 99">
+
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-0.5 -0.7 -7" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-5 10 5" set-image="on: click; target: #IMG_afuera; src: #RSC_pasillo_2" event-set__click="_event: click; position: 99 99 99" event-set__click2="_event: click; _target: #ventana_inicio; position: 0 0 0"></a-entity>
+
+      </a-entity>
+
+      <a-entity id="rdc_entrada" position="99 99 99">
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 0 1.6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 10 -0" set-image="on: click; target: #image-360; src: #IMG_RDC_TRAINING" event-set__click="_event: click; _target: #rdc_entrada; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_training; position: 0 0 0"></a-entity>
+      </a-entity>
+
+      <a-entity id="rdc_training" position="99 99 99">
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 0.5 2.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-3 15 -5" set-image="on: click; target: #image-360; src: #IMG_RDC_PPISO" event-set__click="_event: click; _target: #rdc_training; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0"></a-entity>
+        </a-entity>
+      </a-entity>
+
+      <a-entity id="rdc_ppiso" position="99 99 99">
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 -0.5 0.1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-89 0 0" set-image="on: click; target: #image-360; src: #IMG_RDC_ICHI" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ichi; position: 0 0 0" scale="" visible=""></a-entity>
+
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="6 0.3 0.18" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="3 5 0" set-image="on: click; target: #image-360; src: #IMG_RDC_PPISO" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0" scale="" visible=""></a-entity>
+
+      <a-entity id="IMG_back_mark" template="src: #TMP_back_mark" data-src="#IMG_RDC_ENTRADA" data-thumb="#IMG_back" position="-1.2 -1.4 -1.5" rotation="-90 45 -10" event-set__click="_event: click; _target: #rdc_training; position: 0 0 0" event-set__click2="_event: click; _target: #rdc_ppiso; position: 99 99 99" scale="" visible=""></a-entity>
+      </a-entity>
+
+      <a-entity id="rdc_ichi" position="99 99 99">
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="5.7 3 -6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="3 47 20" set-image="on: click; target: #image-360; src: #IMG_RDC_PALTA" event-set__click="_event: click; _target: #rdc_ichi; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_palta; position: 0 0 0" scale="" visible=""></a-entity>
+      </a-entity>
+
+      <a-entity id="rdc_palta" position="99 99 99">
+      <!-- FOTO NUEVA _ PLANTA ALTA RDC EXEC -->
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-5 0.8 -4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 47 0" set-image="on: click; target: #image-360; src: #IMG_RDC_ICHI" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ichi; position: 0 0 0" scale="" visible=""></a-entity>
+
+      <!-- FOTO NUEVA _ PLANTA ALTA DEP -->
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="0.4 -1 9" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="5 0 5" set-image="on: click; target: #image-360; src: #IMG_RDC_PPISO" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0" scale="" visible=""></a-entity>
+
+
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="1.7 3 7" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-25 12 50" set-image="on: click; target: #image-360; src: #IMG_RDC_CERTS" event-set__click="_event: click; _target: #rdc_palta; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_certs; position: 0 0 0" scale="" visible=""></a-entity>
+      </a-entity>
+      </a-entity>
+
+      <a-entity id="rdc_certs" position="99 99 99">
       </a-entity>
       <!-- CAMERA + CURSOR. -->
       <a-entity camera look-controls mouse-cursor>
