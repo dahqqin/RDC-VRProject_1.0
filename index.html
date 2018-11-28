@@ -190,9 +190,6 @@
           </a-entity>
         </script>
 
-        <!-- <a-entity id="cylinderText" template="src: #TMP_GUIDE" data-src="#IMG_door" data-thumb="#IMG_door">
-            </a-entity> -->
-
         <!-- Guide_img -->
         <script id="TMP_guide_v" type="text/html">
         <a-entity class="link"
@@ -213,7 +210,7 @@
 
       <a-sky id="image-360" radius="10" src="#IMG_afuera"></a-sky>
 
-      <a-sound src="src: url(bensound-hipjazz.mp3)" autoplay="true" position="0 2 5" volume="1"></a-sound>
+      <a-sound src="src: url(audio/0-music.mp3)" autoplay="true" position="0 2 5" volume="1"></a-sound>
       <!-- VENTANA DE INICIO -->
 
       <a-entity id="ventana_inicio">
@@ -345,6 +342,8 @@
 
       <a-entity id="rdc_entrada" position="99 99 99">
         <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 0 1.6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 10 -0" set-image="on: click; target: #image-360; src: #IMG_RDC_TRAINING" event-set__click="_event: click; _target: #rdc_entrada; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_training; position: 0 0 0"></a-entity>
+
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.7 0.3 -6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" set-image="on: click; target: #image-360; src: #IMG_RDC_TRAINING" event-set__click="_event: click; _target: #rdc_entrada; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_training; position: 0 0 0" scale="" visible=""></a-entity>
       </a-entity>
 
       <a-entity id="rdc_training" position="99 99 99">
