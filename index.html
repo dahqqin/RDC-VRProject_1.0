@@ -256,7 +256,7 @@
       <!-- GIF arrows. -->
       <a-entity class="link" geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0" set-image="on: click; target: #image-360; src: #IMG_RDC_ENTRADA" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_entrada; position: 0 0 0"></a-entity>
 
-      <a-entity class="link" geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="5 58 0" set-image="on: click; target: #image-360; src: #IMG_puerta_dep" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #ROOM_1_PUERTA_DEP; position: 0 0 0"></a-entity>
+      <a-entity class="link" geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="5 58 0" sound="on: click; src: #SND_welcome"></a-entity>
 
 
       </a-entity>
@@ -343,7 +343,7 @@
       <a-entity id="rdc_entrada" position="99 99 99">
         <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 0 1.6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 10 -0" set-image="on: click; target: #image-360; src: #IMG_RDC_TRAINING" event-set__click="_event: click; _target: #rdc_entrada; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_training; position: 0 0 0"></a-entity>
 
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.7 0.3 -6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" set-image="on: click; target: #image-360; src: #IMG_RDC_TRAINING" event-set__click="_event: click; _target: #rdc_entrada; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_training; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.7 0.3 -6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" sound="on: mouseenter; src: url(audio/2-iis.mp3)"></a-entity>
       </a-entity>
 
       <a-entity id="rdc_training" position="99 99 99">
