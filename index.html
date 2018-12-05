@@ -16,11 +16,37 @@
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
      <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+     <script>
+  AFRAME.registerComponent("foo", {
+    init: function() {
+      var self = this.el
+      var fadeInAnim = document.querySelector("#fadein-animation")
+      var fadeOutAnim = document.querySelector("#fadeout-animation")
+      var images = ["#https://i.imgur.com/GVqdLKg.jpg","https://i.imgur.com/lf6xb20.jpg"]
+      var switchflip = 1
+      fadeOutAnim.addEventListener("animationend", (e) => {
+        self.setAttribute("material", "src", images[switchflip])
+        switchflip = switchflip === 1 ? 0 : 1
+        self.emit('fadein')
+      })
+      fadeInAnim.addEventListener("animationend", (e) => {
+        var documento = document.querySelector("#ventana_inicio")
+        documento.setAttribute('position', {x: 0, y: 0, z: 0})
+      })
+      setTimeout(function() {
+        self.emit('fadeout')
+      }, 10000)
+    }
+  })
+
+</script>
 
   </head>
   <body>
     <a-scene cursor="rayOrigin: mouse">
       <a-assets>
+        <img id="INTRO_1" crossorigin="anonymous" src="https://i.imgur.com/GVqdLKg.jpg">
+        <img id="INTRO_2" crossorigin="anonymous" src="https://i.imgur.com/S4vZowe.jpg">
         <img id="IMG_city" crossorigin="anonymous" src="https://i.imgur.com/ZRZBwPe.jpg">
         <img id="IMG_SQ_map" crossorigin="anonymous" src="https://i.imgur.com/5LHFC39.jpg">
         <img id="IMG_SQ_recycling" crossorigin="anonymous" src="https://i.imgur.com/vJubs1X.jpg">
@@ -211,12 +237,15 @@
       <!-- SKY 360. -->
       <!-- -------- -->
 
-      <a-sky id="image-360" radius="10" src="#IMG_afuera"></a-sky>
+      <a-sky id="image-360" radius="10" src="#INTRO_1" material="opacity:1" foo>
+      <a-animation id="fadeout-animation" attribute="material.opacity" dur="1000" direction="forward" from="1" to="0" begin="fadeout"></a-animation>
+      <a-animation id="fadein-animation" attribute="material.opacity" dur="1000" direction="forward" from="0" to="1" begin="fadein"></a-animation>
+      </a-sky>
 
       <a-sound src="src: url(audio/0-music.mp3)" autoplay="true" position="0 1 0" volume="0.05"></a-sound>
       <!-- VENTANA DE INICIO -->
 
-      <a-entity id="ventana_inicio">
+      <a-entity id="ventana_inicio" position="99 99 99">
 
       <!-- QUESTION MARK AYUDA. -->
       <a-entity id="qmark" template="src: #TMP_qmark" data-src="#cubes" data-thumb="#IMG_pregunta" position="3 2 -3" sound="on: click; src: url(https://ucarecdn.com/c10bed75-5a58-43b4-987b-9199d800ddea/; volume: 2)"></a-entity>
