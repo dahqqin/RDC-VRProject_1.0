@@ -250,12 +250,12 @@
       <!-- -------- -->
       <!-- SKY 360. -->
       <!-- -------- -->
-
+    
       <a-sky id="image-360" radius="10" src="#INTRO_1" material="opacity:1" foo>
       <a-animation id="fadeout-animation" attribute="material.opacity" dur="1000" direction="forward" from="1" to="0" begin="fadeout"></a-animation>
       <a-animation id="fadein-animation" attribute="material.opacity" dur="1000" direction="forward" from="0" to="1" begin="fadein"></a-animation>
       </a-sky>
-
+      <a-entity id="mast" rotation="0 0 0">
       <a-sound src="src: url(audio/0-music.mp3)" autoplay="true" position="0 1 0" volume="0.05"></a-sound>
       <!-- VENTANA DE INICIO -->
 
@@ -424,7 +424,7 @@
       <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-5 0.8 -4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 47 0" set-image="on: click; target: #image-360; src: #IMG_OFF_PRINCIPAL" event-set__click="_event: click; _target: #rdc_palta; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_principal; position: 0 0 0" scale="" visible=""></a-entity>
 
       <!-- FOTO NUEVA _ PLANTA ALTA DEP -->
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="0.4 -1 9" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="5 0 5" set-image="on: click; target: #image-360; src: #IMG_DEP_ARR1" event-set__click="_event: click; _target: #rdc_palta; position: 99 99 99" event-set__click2="_event: click; _target: #dep_alta1; position: 0 0 0" scale="" visible=""></a-entity>
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="0.4 -1 9" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="5 0 5" set-image="on: click; target: #image-360; src: #IMG_DEP_ARR1; rot: 0 85 0" event-set__click="_event: click; _target: #rdc_palta; position: 99 99 99" event-set__click2="_event: click; _target: #dep_alta1; position: 0 0 0" event-set__click4="_event: click; _target: #dep_alta1; rotation: 0 85 0"></a-entity>
 
       <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="1.7 3 7" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-25 12 50" set-image="on: click; target: #image-360; src: #IMG_RDC_CERTS" event-set__click="_event: click; _target: #rdc_palta; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_certs; position: 0 0 0" scale="" visible=""></a-entity>
 
@@ -492,39 +492,39 @@
       </a-entity>
 
       <a-entity id="dep_alta1" position="99 99 99">
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8.2 0.0 -1.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="10 60 0" set-image="on: click; target: #image-360; src: #IMG_DEP_ARR2" event-set__click="_event: click; _target: #dep_alta1; position: 99 99 99" event-set__click2="_event: click; _target: #dep_alta2; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8.2 0.0 -1.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="10 60 0" set-image="on: click; target: #image-360; src: #IMG_DEP_ARR2; rot: 0 0 0" event-set__click="_event: click; _target: #dep_alta1; position: 99 99 99" event-set__click2="_event: click; _target: #dep_alta2; position: 0 0 0" event-set__click4="_event: click; _target: #dep_alta2; rotation: 0 0 0" scale="" visible=""></a-entity>
       </a-entity>
      
       <a-entity id="dep_alta2" position="99 99 99"> 
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="4.5 0.5 -8.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="0 60 0" set-image="on: click; target: #image-360; src: #IMG_DEP_ARR3" event-set__click="_event: click; _target: #dep_alta2; position: 99 99 99" event-set__click2="_event: click; _target: #dep_alta3; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="4.5 0.5 -8.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="0 60 0" set-image="on: click; target: #image-360; src: #IMG_DEP_ARR3; rot: 0 -130 0" event-set__click="_event: click; _target: #dep_alta2; position: 99 99 99" event-set__click2="_event: click; _target: #dep_alta3; position: 0 0 0" event-set__click4="_event: click; _target: #dep_alta3; rotation: 0 -130 0" scale="" visible=""></a-entity>
       </a-entity>
      
       <a-entity id="dep_alta3" position="99 99 99"> 
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-5.2 -2 -2.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="-20 70 0" set-image="on: click; target: #image-360; src: #IMG_DEP_ELEV1" event-set__click="_event: click; _target: #dep_alta3; position: 99 99 99" event-set__click2="_event: click; _target: #dep_elev1; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-5.2 -2 -2.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="-20 70 0" set-image="on: click; target: #image-360; src: #IMG_DEP_ELEV1; rot: 0 -150 0" event-set__click="_event: click; _target: #dep_alta3; position: 99 99 99" event-set__click3="_event: click; _target: #dep_elev1; rotation: 0 -150 0" event-set__click2="_event: click; _target: #dep_elev1; position: 0 0 0" scale="" visible=""></a-entity>
       </a-entity>
      
       <a-entity id="dep_elev1" position="99 99 99"> 
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6.2 -0.3 -1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="0 80 0" set-image="on: click; target: #image-360; src: #IMG_DEP_ELEV2" event-set__click="_event: click; _target: #dep_elev1; position: 99 99 99" event-set__click2="_event: click; _target: #dep_elev2; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6.2 -0.3 -1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="0 80 0" set-image="on: click; target: #image-360; src: #IMG_DEP_ELEV2; rot: 0 -150 0" event-set__click="_event: click; _target: #dep_elev1; position: 99 99 99" event-set__click2="_event: click; _target: #dep_elev2; position: 0 0 0" event-set__click3="_event: click; _target: #dep_elev2; rotation: 0 -150 0" scale="" visible=""></a-entity>
       </a-entity>
      
       <a-entity id="dep_elev2" position="99 99 99"> 
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6.2 -0.3 -1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="0 80 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA1" event-set__click="_event: click; _target: #dep_elev2; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja1; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6.2 -0.3 -1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="0 80 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA1; rot: 0 -150 0" event-set__click="_event: click; _target: #dep_elev2; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja1; position: 0 0 0" event-set__click3="_event: click; _target: #dep_baja1; rotation: 0 -150 0" scale="" visible=""></a-entity>
       </a-entity>
       
       <a-entity id="dep_baja1" position="99 99 99"> 
-       <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-3.2 0.0 4.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="-90 50 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA2" event-set__click="_event: click; _target: #dep_baja1; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja2; position: 0 0 0" scale="" visible=""></a-entity>
+       <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-3.2 0.0 4.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="-90 50 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA2; rot: 0 -70 0" event-set__click="_event: click; _target: #dep_baja1; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja2; position: 0 0 0" event-set__click3="_event: click; _target: #dep_baja2; rotation: 0 -70 0" scale="" visible=""></a-entity>
       </a-entity>
       
       <a-entity id="dep_baja2" position="99 99 99"> 
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.2 0.7 -5.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="3 40 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA3" event-set__click="_event: click; _target: #dep_baja2; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja3; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.2 0.7 -5.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="3 40 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA3; rot: 0 -150 0" event-set__click="_event: click; _target: #dep_baja2; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja3; position: 0 0 0" event-set__click3="_event: click; _target: #dep_baja3; rotation: 0 -150 0" scale="" visible=""></a-entity>
       </a-entity>
       
       <a-entity id="dep_baja3" position="99 99 99"> 
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6.2 0.0 -3.2" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="4 60 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA4" event-set__click="_event: click; _target: #dep_baja3; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja4; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6.2 0.0 -3.2" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="4 60 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA4; rot: 0 -150 0" event-set__click="_event: click; _target: #dep_baja3; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja4; position: 0 0 0" event-set__click3="_event: click; _target: #dep_baja4; rotation: 0 -150 0" scale="" visible=""></a-entity>
       </a-entity>
       
       <a-entity id="dep_baja4" position="99 99 99"> 
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6.8 1.2 -7.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="5 45 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA5" event-set__click="_event: click; _target: #dep_baja4; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja5; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-6.8 1.2 -7.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="5 45 0" set-image="on: click; target: #image-360; src: #IMG_DEP_BAJA5; rot: 0 110 0" event-set__click="_event: click; _target: #dep_baja4; position: 99 99 99" event-set__click2="_event: click; _target: #dep_baja5; position: 0 0 0" event-set__click3="_event: click; _target: #dep_baja5; rotation: 0 110 0" scale="" visible=""></a-entity>
       </a-entity>
       
       <a-entity id="dep_baja5" position="99 99 99"> 
@@ -558,6 +558,7 @@
           fuse="true"
           raycaster="objects: .link"></a-cursor>
       </a-entity>
+    </a-entity>
     </a-scene>
   </body>
 </html>
