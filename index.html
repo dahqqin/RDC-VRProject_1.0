@@ -263,6 +263,7 @@
       </a-sky>
       <a-entity id="mast" rotation="0 0 0">
       <a-sound src="src: url(audio/0-music.mp3)" autoplay="true" position="0 1 0" volume="0.05"></a-sound>
+      <a-sound src="src: url(audio/1-welcome.mp3)" autoplay="true" position="0 1 0" volume="0.5"></a-sound>
       <!-- VENTANA DE INICIO -->
 
       <a-entity id="ventana_inicio" position="99 99 99">
@@ -409,7 +410,9 @@
       </a-entity>
 
       <a-entity id="rdc_ppiso" position="99 99 99">
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 -0.5 0.1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-89 0 0" set-image="on: click; target: #image-360; src: #IMG_RDC_ICHI" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" scale="" visible=""></a-entity>
+
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 -0.5 0.1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-89 0 0" set-image="on: click; target: #image-360; src: #IMG_RDC_ICHI" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ichi; position: 0 0 0" scale="" visible=""></a-entity>
+
       <!-- Flecha cocina -->
       <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4 -0.4 4.3" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="-89 0 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_COCINA" event-set__click="_event: click; _target: #rdc_ppiso_x; position: 99 99 99" scale="" visible=""></a-entity>
 
@@ -417,12 +420,13 @@
       <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="0.2 -0.2 -6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="-89 0 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_LEISURE" event-set__click="_event: click; _target: #rdc_ppiso_x; position: 99 99 99" scale="" visible=""></a-entity>
 
       <!-- Flecha minori -->
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="5 3.3 6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="3 5 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_MINORI" event-set__click="_event: click; _target: #rdc_ppiso_x; position: 99 99 99"scale="" visible=""></a-entity>
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="5 3.3 6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="3 5 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_MINORI" event-set__click="_event: click; _target: #rdc_ppiso_x; position: 99 99 99" scale="" visible=""></a-entity>
 
       <!-- Flecha hikari -->
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="5 1.3 6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="3 5 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_HIKARI" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0" scale="" visible=""></a-entity>
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="5 1.3 6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="3 5 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_HIKARI" event-set__click="_event: click; _target: #rdc_ppiso_X; position: 99 99 99" scale="" visible=""></a-entity>
 
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="6 0.3 0.18" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="3 5 0" set-image="on: click; target: #image-360; src: #IMG_RDC_PPISO" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0" scale="" visible=""></a-entity></a-entity>
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="6 0.3 0.18" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="3 5 0" set-image="on: click; target: #image-360; src: #IMG_RDC_PPISO" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0" scale="" visible=""></a-entity>
+
       </a-entity>
 
       <a-entity id="rdc_ichi" position="99 99 99">
