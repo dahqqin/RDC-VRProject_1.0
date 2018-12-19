@@ -117,6 +117,12 @@
         <img id="IMG_DEP_CCC2" crossorigin="anonymous" src="https://i.imgur.com/4PQYB8q.jpg">
         <img id="IMG_DEP_LAB1" crossorigin="anonymous" src="https://i.imgur.com/Qn9ueZS.jpg">
         <img id="IMG_DEP_LAB2" crossorigin="anonymous" src="https://i.imgur.com/TrD59YV.jpg">
+
+        <img id="IMG_PPISO_COCINA" crossorigin="anonymous" src="https://i.imgur.com/DwnqZSR.jpg">
+        <img id="IMG_PPISO_LEISURE" crossorigin="anonymous" src="https://i.imgur.com/YTESYAn.jpg">
+        <img id="IMG_PPISO_HIKARI" crossorigin="anonymous" src="https://i.imgur.com/zVPQMlZ.jpg">
+        <img id="IMG_PPISO_MINORI" crossorigin="anonymous" src="https://i.imgur.com/TyyUdjm.jpg">
+        <img id="IMG_PPISO_NOIMAGE" crossorigin="anonymous" src="https://i.imgur.com/PjmSu3I.jpg">
         <!-- Imagenes cuadradas con event_set. -->
         <script id="link" type="text/html">
           <a-entity class="link"
@@ -391,7 +397,7 @@
       </a-entity>
 
       <a-entity id="rdc_training" position="99 99 99">
-        <a-entity class="link" id="gif_PPS" geometry="primitive:box;" position="-8 0.5 2.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-3 15 -5" set-image="on: click; target: #image-360; src: #IMG_RDC_PPISO" event-set__click="_event: click; _target: #rdc_training; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0"></a-entity>
+        <a-entity class="link" id="gif_PPS" geometry="primitive:box;" position="-8 0.5 2.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-3 15 -5" set-image="on: click; target: #image-360; src: #IMG_PPISO_NOIMAGE" event-set__click="_event: click; _target: #rdc_training; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0"></a-entity>
 
         <a-entity class="link" id="gif_RWAY" geometry="primitive:box;" position="-3.9 0 2.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="-3 15 -5" sound="on: click; src: url(audio/3-ricohway.mp3); volume: 2;" set-image-nofade="on: click; target: #image-360; src: #IMG_POPUP2; dur: 0" event-set__click="_event: click; _target: #rdc_training; scale: 0.001" event-set__click2="_event: click; _target: #rdc_training_x; position: 0 0 0" ></a-entity>
 
@@ -403,11 +409,20 @@
       </a-entity>
 
       <a-entity id="rdc_ppiso" position="99 99 99">
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 -0.5 0.1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-89 0 0" set-image="on: click; target: #image-360; src: #IMG_RDC_ICHI" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ichi; position: 0 0 0" scale="" visible=""></a-entity>
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 -0.5 0.1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-89 0 0" set-image="on: click; target: #image-360; src: #IMG_RDC_ICHI" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" scale="" visible=""></a-entity>
+      <!-- Flecha cocina -->
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4 -0.4 4.3" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="-89 0 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_COCINA" event-set__click="_event: click; _target: #rdc_ppiso_x; position: 99 99 99" scale="" visible=""></a-entity>
 
-      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="6 0.3 0.18" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="3 5 0" set-image="on: click; target: #image-360; src: #IMG_RDC_PPISO" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0" scale="" visible=""></a-entity>
+      <!-- Flecha leisure -->
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="0.2 -0.2 -6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="-89 0 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_LEISURE" event-set__click="_event: click; _target: #rdc_ppiso_x; position: 99 99 99" scale="" visible=""></a-entity>
 
-      <a-entity id="IMG_back_mark" template="src: #TMP_back_mark" data-src="#IMG_RDC_ENTRADA" data-thumb="#IMG_back" position="-1.2 -1.4 -1.5" rotation="-90 45 -10" event-set__click="_event: click; _target: #rdc_training; position: 0 0 0" event-set__click2="_event: click; _target: #rdc_ppiso; position: 99 99 99" scale="" visible=""></a-entity>
+      <!-- Flecha minori -->
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="5 3.3 6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="3 5 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_MINORI" event-set__click="_event: click; _target: #rdc_ppiso_x; position: 99 99 99"scale="" visible=""></a-entity>
+
+      <!-- Flecha hikari -->
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="5 1.3 6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="3 5 0" set-image-nofade="on: click; target: #image-360; src: #IMG_PPISO_HIKARI" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0" scale="" visible=""></a-entity>
+
+      <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="6 0.3 0.18" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="3 5 0" set-image="on: click; target: #image-360; src: #IMG_RDC_PPISO" event-set__click="_event: click; _target: #rdc_ppiso; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0" scale="" visible=""></a-entity></a-entity>
       </a-entity>
 
       <a-entity id="rdc_ichi" position="99 99 99">
