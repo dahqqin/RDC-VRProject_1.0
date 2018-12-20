@@ -22,7 +22,7 @@
       var self = this.el
       var fadeInAnim = document.querySelector("#fadein-animation")
       var fadeOutAnim = document.querySelector("#fadeout-animation")
-      var images = ["#https://i.imgur.com/GVqdLKg.jpg","https://i.imgur.com/nPbu3lC.jpg"]
+      var images = ["#https://i.imgur.com/GVqdLKg.jpg","https://i.imgur.com/BhyNx2y.jpg"]
       var switchflip = 1
       fadeOutAnim.addEventListener("animationend", (e) => {
         self.setAttribute("material", "src", images[switchflip])
@@ -66,6 +66,8 @@
         <img id="IMG_back" crossorigin="anonymous" src="https://i.imgur.com/e6UEUwF.png">
         <video id="VID_ricoh2020" crossorigin="anonymous" webkit-playsinline playsinline> 
         <source type="video/mp4" src="ricoh2020.mp4" /></video>
+        <video id="VID_ricohtr" crossorigin="anonymous" webkit-playsinline playsinline> 
+        <source type="video/mp4" src="ricoh20_tr.mp4" /></video>
         <img id="IMG_afuera_nuevo" crossorigin="anonymous" src="https://i.imgur.com/qSoLsvw.jpg">
         <img id="IMG_sala_capacitacion" crossorigin="anonymous" src="https://i.imgur.com/bSRZ7sv.jpg">
         <img id="IMG_puerta_ccc" crossorigin="anonymous" src="https://i.imgur.com/8aZCL6t.jpg">
@@ -123,6 +125,8 @@
         <img id="IMG_PPISO_HIKARI" crossorigin="anonymous" src="https://i.imgur.com/zVPQMlZ.jpg">
         <img id="IMG_PPISO_MINORI" crossorigin="anonymous" src="https://i.imgur.com/TyyUdjm.jpg">
         <img id="IMG_PPISO_NOIMAGE" crossorigin="anonymous" src="https://i.imgur.com/PjmSu3I.jpg">
+
+        <img id="RDCinema" crossorigin="anonymous" src="https://i.imgur.com/Qtg82Uo.jpg">
         <!-- Imagenes cuadradas con event_set. -->
         <script id="link" type="text/html">
           <a-entity class="link"
@@ -309,9 +313,22 @@
 
       <a-entity class="link" geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="5 58 0" sound="on: click; src: #SND_welcome"></a-entity>
 
+      <a-entity class="link" geometry="primitive:box;" position="3.5 0.2 0.1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 30 0" set-image="on: click; target: #image-360; src: #RDCinema; rot: 0 180 0" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #cine; position: 0 0 0" scale="" visible=""></a-entity>
 
       </a-entity>
 
+      <a-entity id="cine" position="99 99 99">
+
+        <a-video id="vid" src="#VID_ricohtr" width="6" height="3.2" position="6 0.7 0.15" visible="true" autoplay="false" loop="false" rotation="0 90 0" scale="1.05">
+          <a-entity id="cruz_video" template="src: #TMP_close_video" data-src="#IMG_crossmark" data-thumb="#IMG_crossmark" position="2.75 1.35 0.1" visible="true" event-set__click="_event: click; _target: #vid; visible: false" event-set__click2="_event: click; _target: #welcomm; visible: true" event-set__click3="_event: click; _target: #ent_control; visible: false"> </a-entity>
+
+          
+      </a-video>
+      <a-entity id="ent_control" position="0.75 -2.2 0.25" visible="true" rotation="0 -90 0" scale="">
+      <a-entity id="controls" video-controls="src:#VID_ricohtr" size="3" ></a-entity>
+      </a-entity>
+
+      </a-entity>
       <!-- END OF FIRST WINDOW -->
 
       <!-- FIRST POINT OF VIEW -->
