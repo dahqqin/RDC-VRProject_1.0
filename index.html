@@ -16,6 +16,8 @@
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
      <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+    <script src="https://rawgit.com/IdeaSpaceVR/aframe-ui-modal-component/master/dist/aframe-ui-modal-component.min.js"></script>
+
      <script>
   AFRAME.registerComponent("foo", {
     init: function() {
@@ -87,7 +89,7 @@
         <img id="IMG_RDC_TRAINING" crossorigin="anonymous" src="https://i.imgur.com/KrLGomF.jpg">
         <img id="IMG_RDC_PPISO" crossorigin="anonymous" src="https://i.imgur.com/uZirarP.jpg">
         <img id="IMG_RDC_PALTA" crossorigin="anonymous" src="https://i.imgur.com/KUhSm2h.jpg">
-        <img id="IMG_RDC_CERTS" crossorigin="anonymous" src="https://i.imgur.com/YSrKIIP.jpg">
+        <img id="IMG_RDC_CERTS" crossorigin="anonymous" src="https://i.imgur.com/P8Dwzy4.jpg">
         <img id="IMG_RDC_ICHI" crossorigin="anonymous" src="https://i.imgur.com/vV7a086.jpg">
         <img id="IMG_OFF_PRINCIPAL" crossorigin="anonymous" src="https://i.imgur.com/vCXmjtE.jpg">
         <img id="IMG_OFF_PASILLO" crossorigin="anonymous" src="https://i.imgur.com/4lTXTc0.jpg">
@@ -126,7 +128,22 @@
         <img id="IMG_PPISO_MINORI" crossorigin="anonymous" src="https://i.imgur.com/TyyUdjm.jpg">
         <img id="IMG_PPISO_NOIMAGE" crossorigin="anonymous" src="https://i.imgur.com/PjmSu3I.jpg">
 
-        <img id="RDCinema" crossorigin="anonymous" src="https://i.imgur.com/Qtg82Uo.jpg">
+        <img id="RDCinema" crossorigin="anonymous" src="https://i.imgur.com/UN9A6Dg.jpg">
+        <img id="BTNtest" crossorigin="anonymous" src="https://i.imgur.com/WAo72pG.jpg">
+        <img id="BTN1" crossorigin="anonymous" src="https://i.imgur.com/MvOP1DZ.jpg">
+        <img id="BTN2" crossorigin="anonymous" src="https://i.imgur.com/9Z5Hzwr.jpg">
+        <img id="BTN3" crossorigin="anonymous" src="https://i.imgur.com/QGaunVH.jpg">
+
+        <img id="CERTS_ISO" crossorigin="anonymous" src="https://i.imgur.com/y2UF8Cq.jpg">
+        <img id="CERTS_OHSAS" crossorigin="anonymous" src="https://i.imgur.com/FQPMJux.jpg">
+        <img id="CERTS_ADUANA" crossorigin="anonymous" src="https://i.imgur.com/jjTI50U.jpg">
+
+        <img id="IMG_ENT1" crossorigin="anonymous" src="https://i.imgur.com/J9oXPcr.jpg">
+        <img id="IMG_ENT2" crossorigin="anonymous" src="https://i.imgur.com/8JVPKFX.jpg">
+        <img id="IMG_ENT3" crossorigin="anonymous" src="https://i.imgur.com/pjZdVYn.jpg">
+        <img id="IMG_ENT4" crossorigin="anonymous" src="https://i.imgur.com/ZqGzENN.jpg">
+        <img id="IMG_ENT5" crossorigin="anonymous" src="https://i.imgur.com/a4rpVBD.jpg">
+
         <!-- Imagenes cuadradas con event_set. -->
         <script id="link" type="text/html">
           <a-entity class="link"
@@ -171,6 +188,14 @@
             material="shader: flat; src: ${thumb}; alpha-test: 0.5"
             sound="on: click; src: #SND_click-sound"
             set-image="on: click; target: #image-360; src: ${src}">
+        </a-entity>
+        </script>
+
+        <script id="TMP_menubtn" type="text/html">
+        <a-entity class="link"
+            geometry="primitive: plane; width: 2; height: 0.4"
+            material="shader: flat; src: ${thumb}; alpha-test: 0.5"
+            sound="on: click; src: #SND_click-sound">
         </a-entity>
         </script>
 
@@ -297,11 +322,6 @@
         </a-entity>
         <!-- THIRD LINK -->
         <a-entity id="IMG_afuera" template="src: #link" data-src="#IMG_afuera" data-thumb="#IMG_SQ_map" event-set__click="_event: click; _target: #vid; visible: true" event-set__click2="_event: click; _target: #welcomm; visible: false" event-set__click3="_event: click; _target: #ent_control; visible: true"></a-entity></a-entity>
-
-      <!-- IMG_Welcome banner. -->
-      <!--<a-entity id="welcomm" template="src: #TMP_banner" data-src="#IMG_welcome" data-thumb="#IMG_welcome" position="0 1.7 -4" sound="on: click; src: #SND_welcome"> </a-entity>
--->
-
       
       <!-- Guide banner. -->
       <a-entity id="ent_control" position="0 -0.326 0" visible="false">
@@ -319,13 +339,24 @@
 
       <a-entity id="cine" position="99 99 99">
 
+        <a-entity id="boton" template="src: #TMP_menubtn" data-thumb="#BTNtest" position="-2 0 -7" rotation="0 0 0" event-set__mouseenter="_event: mouseenter; _target: #boton2; position: 0.2 0 -7" event-set__mouseenter2="_event: mouseenter; _target: #boton3; position: 0.2 -0.5 -7" event-set__mouseenter3="_event: mouseenter; _target: #boton4; position: 0.2 0.5 -7">
+        </a-entity>
+
+        <a-entity id="boton2" template="src: #TMP_menubtn" data-thumb="#BTN1" position="99 99 99" rotation="0 0 0" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #POV_2_AFU; position: 0 0 0"></a-entity>
+
+        <a-entity id="boton3" template="src: #TMP_menubtn" data-thumb="#BTN2" position="99 99 99" rotation="0 0 0" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #POV_2_AFU; position: 0 0 0"></a-entity>
+
+        <a-entity id="boton4" template="src: #TMP_menubtn" data-thumb="#BTN3" position="99 99 99" rotation="0 0 0" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #POV_2_AFU; position: 0 0 0"></a-entity>
+
+
         <a-video id="vid" src="#VID_ricohtr" width="6" height="3.2" position="6 0.7 0.15" visible="true" autoplay="false" loop="false" rotation="0 -90 0" scale="1.05">
           <a-entity id="cruz_video" template="src: #TMP_close_video" data-src="#IMG_crossmark" data-thumb="#IMG_crossmark" position="2.75 1.35 0.1" visible="true" event-set__click="_event: click; _target: #vid; visible: false" event-set__click2="_event: click; _target: #welcomm; visible: true" event-set__click3="_event: click; _target: #ent_control; visible: false"> </a-entity>
-
-          
+        
       </a-video>
       <a-entity id="ent_control" position="0.75 -2.2 0.25" visible="true" rotation="0 -90 0" scale="">
       <a-entity id="controls" video-controls="src:#VID_ricohtr" size="3" ></a-entity>
+      
+      </a-entity>
       </a-entity>
 
       </a-entity>
@@ -409,10 +440,29 @@
       </a-entity>
 
       <a-entity id="rdc_entrada" position="99 99 99">
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 0 1.6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_ENT1" event-set__click="_event: click; _target: #rdc_entrada; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ent2; position: 0 0 0" event-set__click3="_event: click; position: 99 99 99"></a-entity>
+
         <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 0 1.6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 10 -0" set-image="on: click; target: #image-360; src: #IMG_RDC_TRAINING" event-set__click="_event: click; _target: #rdc_entrada; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_training; position: 0 0 0"></a-entity>
 
         <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.7 0.3 -6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" sound="on: mouseenter; src: url(audio/2-iis.mp3); volume: 5.5"></a-entity>
       </a-entity>
+
+      <a-entity id="rdc_ent1" position="99 99 99"> 
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 1.2 -3.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_ENT1" event-set__click="_event: click; _target: #rdc_ent1; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ent2; position: 0 0 0" scale="0.4 0.4 0.4" visible=""></a-entity>
+      </a-entity>
+      <a-entity id="rdc_ent2" position="99 99 99"> 
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 1.2 -3.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_ENT2" event-set__click="_event: click; _target: #rdc_ent2; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ent3; position: 0 0 0" scale="0.4 0.4 0.4" visible=""></a-entity>
+      </a-entity>
+      <a-entity id="rdc_ent3" position="99 99 99"> 
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 1.2 -3.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_ENT3" event-set__click="_event: click; _target: #rdc_ent3; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ent4; position: 0 0 0" scale="0.4 0.4 0.4" visible=""></a-entity>
+      </a-entity>
+      <a-entity id="rdc_ent4" position="99 99 99">
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 1.2 -3.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_ENT4" event-set__click="_event: click; _target: #rdc_ent4; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ent5; position: 0 0 0" scale="0.4 0.4 0.4" visible=""></a-entity>
+      </a-entity>
+      <a-entity id="rdc_ent5" position="99 99 99">
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 1.2 -3.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_ENT5" event-set__click="_event: click; _target: #rdc_ent4; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_entrada; position: 0 0 0" scale="0.4 0.4 0.4" visible=""></a-entity>
+      </a-entity>
+
 
       <a-entity id="rdc_training" position="99 99 99">
         <a-entity class="link" id="gif_PPS" geometry="primitive:box;" position="-8 0.5 2.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-3 15 -5" set-image="on: click; target: #image-360; src: #IMG_PPISO_NOIMAGE" event-set__click="_event: click; _target: #rdc_training; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0"></a-entity>
@@ -467,6 +517,11 @@
       </a-entity>
 
       <a-entity id="rdc_certs" position="99 99 99">
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.8 -2.3 6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="-25 12 50" set-image-nofade="on: click; target: #image-360; src: #CERTS_ISO" scale="0.45 0.45 0.45" visible=""></a-entity>
+
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.8 -2.2 2.1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="-25 12 50" set-image-nofade="on: click; target: #image-360; src: #CERTS_OHSAS" scale="0.4 0.4 0.4" visible=""></a-entity>
+
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.8 -2.1 -0.9" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="-25 12 50" set-image-nofade="on: click; target: #image-360; src: #CERTS_ADUANA" scale="0.3 0.3 0.3" visible=""></a-entity>
       </a-entity>
 
       <a-entity id="rdc_principal" position="99 99 99">
