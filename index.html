@@ -24,7 +24,7 @@
       var self = this.el
       var fadeInAnim = document.querySelector("#fadein-animation")
       var fadeOutAnim = document.querySelector("#fadeout-animation")
-      var images = ["#https://i.imgur.com/GVqdLKg.jpg","https://i.imgur.com/BhyNx2y.jpg"]
+      var images = ["https://i.imgur.com/BhyNx2y.jpg","https://i.imgur.com/BhyNx2y.jpg"]
       var switchflip = 1
       fadeOutAnim.addEventListener("animationend", (e) => {
         self.setAttribute("material", "src", images[switchflip])
@@ -142,6 +142,8 @@
         <img id="IMG_ENT3" crossorigin="anonymous" src="https://i.imgur.com/pjZdVYn.jpg">
         <img id="IMG_ENT4" crossorigin="anonymous" src="https://i.imgur.com/ZqGzENN.jpg">
         <img id="IMG_ENT5" crossorigin="anonymous" src="https://i.imgur.com/a4rpVBD.jpg">
+
+        <img id="fondo" crossorigin="fondo" src="https://i.imgur.com/BhyNx2y.jpg">
 
         <!-- Imagenes cuadradas con event_set. -->
         <script id="link" type="text/html">
@@ -285,7 +287,7 @@
       <!-- SKY 360. -->
       <!-- -------- -->
     
-      <a-sky id="image-360" radius="10" src="#INTRO_1" material="opacity:1" foo>
+      <a-sky id="image-360" radius="10" src="#fondo" material="opacity:1" foo>
       <a-animation id="fadeout-animation" attribute="material.opacity" dur="1000" direction="forward" from="1" to="0" begin="fadeout"></a-animation>
       <a-animation id="fadein-animation" attribute="material.opacity" dur="1000" direction="forward" from="0" to="1" begin="fadein"></a-animation>
       </a-sky>
@@ -542,7 +544,7 @@
       </a-entity>
       
       <a-entity id="rdc_data1" position="99 99 99">
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 1.3 1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 5 82" set-image="on: click; target: #image-360; src: #IMG_OFF_DATACENTER2" event-set__click="_event: click; _target: #rdc_data1; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_data2; position: 0 0 0" event-set__click3="_event: click; _target: #rdc_pasillo; position: 99 99 99" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 1.3 1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 5 82" set-image="on: click; target: #image-360; src: #IMG_OFF_DATACENTER2" event-set__click="_event: click; _target: #rdc_data1; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_data2; position: 0 0 0" scale="" visible=""></a-entity>
       </a-entity>
       
       <a-entity id="rdc_data2" position="99 99 99">
