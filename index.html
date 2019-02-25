@@ -144,6 +144,7 @@
         <img id="IMG_ENT5" crossorigin="anonymous" src="https://i.imgur.com/EJmFYcK.jpg">
 
         <img id="fondo" crossorigin="fondo" src="https://i.imgur.com/BhyNx2y.jpg">
+        <img id="final" crossorigin="anonymous" src="https://i.imgur.com/9EsJGsb.jpg">
 
         <!-- Imagenes cuadradas con event_set. -->
         <script id="link" type="text/html">
@@ -647,7 +648,11 @@
       </a-entity>
       
       <a-entity id="dep_lab2" position="99 99 99"> 
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-9.6 0.95 2.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="0 15 -10" set-image="on: click; target: #image-360; src: #IMG_DEP_ARR2" event-set__click="_event: click; _target: #dep_lab2; position: 99 99 99" event-set__click2="_event: click; _target: #IMG_afuera; position: 0 0 0" scale="" visible=""></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-9.6 0.95 2.4" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.95" rotation="0 15 -10" set-image="on: click; target: #image-360; src: #final" event-set__click="_event: click; _target: #dep_lab2; position: 99 99 99" scale="" visible=""></a-entity>
+      </a-entity>
+
+      <a-entity id="test_videosp" position="99 99 99">
+        <video id="antarctica" autoplay loop="true" src="equit.mp4"> </video>
       </a-entity>
 
 
@@ -658,7 +663,6 @@
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
           event-set__1="_event: mouseenter; color: springgreen"
           event-set__2="_event: mouseleave; color: black"
-          fuse="true"
           raycaster="objects: .link"></a-cursor>
       </a-entity>
     </a-entity>
