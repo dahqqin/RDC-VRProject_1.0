@@ -17,6 +17,7 @@
     <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
      <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
     <script src="https://rawgit.com/IdeaSpaceVR/aframe-ui-modal-component/master/dist/aframe-ui-modal-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-multi-video-component/dist/aframe-multi-video-component.min.js"></script>
 
      <script>
   AFRAME.registerComponent("foo", {
@@ -293,6 +294,8 @@
       <a-animation id="fadein-animation" attribute="material.opacity" dur="1000" direction="forward" from="0" to="1" begin="fadein"></a-animation>
       </a-sky>
       <a-entity id="mast" rotation="0 0 0">
+
+      <a-entity aframe-multi-video-component="src: #VID_ricoh2020; time: 200; duration: 5; volume: 0.5; autoplay:true;" position="0 0 0" height="2" width="2"></a-entity>
       <a-sound id="musica" src="src: url(audio/0-music.mp3)" autoplay="true" loop="true" position="0 1 0" volume="0.1"></a-sound>
       <a-sound src="src: url(audio/1-welcome.mp3)" autoplay="true" position="0 1 0" volume="0.4"></a-sound>
       <!-- VENTANA DE INICIO -->
@@ -316,6 +319,7 @@
           <a-entity id="cruz_video" template="src: #TMP_close_video" data-src="#IMG_crossmark" data-thumb="#IMG_crossmark" position="1.5 1 0.1" visible="true" event-set__click="_event: click; _target: #vid; visible: false" event-set__click2="_event: click; _target: #welcomm; visible: true" event-set__click3="_event: click; _target: #ent_control; visible: false" rotation="" scale=""><a-entity class="link" geometry="primitive: plane; height: 0.3; width: 0.3" material="shader: flat; src: #IMG_crossmark; alpha-test: 0.5" sound="on: click; src: #SND_click-sound" animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.01 1.01 1.01" position="" rotation="" scale="" visible="">
         </a-entity></a-entity>
       </a-video>
+
 
       <!-- 3 SQUARES LINKED. -->
       <a-entity id="links" layout="layout: line; margin: 1.5" position="-1.4 1.7 -6" rotation="0 0 1" >
