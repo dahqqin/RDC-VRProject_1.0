@@ -137,11 +137,11 @@
         <img id="CERTS_OHSAS" crossorigin="anonymous" src="https://i.imgur.com/FQPMJux.jpg">
         <img id="CERTS_ADUANA" crossorigin="anonymous" src="https://i.imgur.com/jjTI50U.jpg">
 
-        <img id="IMG_ENT1" crossorigin="anonymous" src="https://i.imgur.com/99SDx66.jpg">
+        <!-- <img id="IMG_ENT1" crossorigin="anonymous" src="https://i.imgur.com/99SDx66.jpg">
         <img id="IMG_ENT2" crossorigin="anonymous" src="https://i.imgur.com/tZnNkI5.jpg">
         <img id="IMG_ENT3" crossorigin="anonymous" src="https://i.imgur.com/L1ELSL7.jpg">
         <img id="IMG_ENT4" crossorigin="anonymous" src="https://i.imgur.com/xFpqhJn.jpg">
-        <img id="IMG_ENT5" crossorigin="anonymous" src="https://i.imgur.com/EJmFYcK.jpg">
+        <img id="IMG_ENT5" crossorigin="anonymous" src="https://i.imgur.com/EJmFYcK.jpg"> -->
 
         <img id="fondo" crossorigin="fondo" src="https://i.imgur.com/BhyNx2y.jpg">
         <img id="final" crossorigin="anonymous" src="https://i.imgur.com/9EsJGsb.jpg">
@@ -312,8 +312,9 @@
 
   
       <!-- VIDEO RICOH2020 -->
-      <a-video id= "vid" src="#VID_ricoh2020" width="6" height="3.2" position="0 1.2 -4" visible="false" autoplay="false" loop="false" >
-          <a-entity id="cruz_video" template="src: #TMP_close_video" data-src="#IMG_crossmark" data-thumb="#IMG_crossmark" position="2.75 1.35 0.1" visible="true" event-set__click="_event: click; _target: #vid; visible: false" event-set__click2="_event: click; _target: #welcomm; visible: true" event-set__click3="_event: click; _target: #ent_control; visible: false"> </a-entity>
+      <a-video id="vid" src="#VID_ricoh2020" width="3" height="1.6" position="0 0.8 -4" visible="false" autoplay="true" loop="false" rotation="3 0 1" scale="" material="" geometry="">
+          <a-entity id="cruz_video" template="src: #TMP_close_video" data-src="#IMG_crossmark" data-thumb="#IMG_crossmark" position="1.5 1 0.1" visible="true" event-set__click="_event: click; _target: #vid; visible: false" event-set__click2="_event: click; _target: #welcomm; visible: true" event-set__click3="_event: click; _target: #ent_control; visible: false" rotation="" scale=""><a-entity class="link" geometry="primitive: plane; height: 0.3; width: 0.3" material="shader: flat; src: #IMG_crossmark; alpha-test: 0.5" sound="on: click; src: #SND_click-sound" animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.01 1.01 1.01" position="" rotation="" scale="" visible="">
+        </a-entity></a-entity>
       </a-video>
 
       <!-- 3 SQUARES LINKED. -->
@@ -332,8 +333,6 @@
 
       <!-- GIF arrows. -->
       <a-entity class="link" geometry="primitive:box;" position="-8.5 1 5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 30 0" set-image="on: click; target: #image-360; src: #IMG_RDC_ENTRADA" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_entrada; position: 0 0 0"></a-entity>
-
-      <a-entity class="link" geometry="primitive:box;" position="-7.5 1 -5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="5 58 0" sound="on: click; src: #SND_welcome" event-set__click="_event: click; _target: #test_videosp; position: 0 0 0" event-set__click2="_event: click; _target: #ventana_inicio; position: 99 99 99"></a-entity>
 
       <a-entity class="link" geometry="primitive:box;" position="3.5 0.2 0.1" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 30 0" set-image="on: click; target: #image-360; src: #RDCinema; rot: 0 180 0" event-set__click="_event: click; _target: #ventana_inicio; position: 99 99 99" event-set__click2="_event: click; _target: #cine; position: 0 0 0" event-set__click3="_event: click; _target: #musica; volume: 0" scale="" visible=""></a-entity>
 
@@ -441,13 +440,14 @@
       </a-entity>
 
       <a-entity id="rdc_entrada" position="99 99 99">
-        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 0 1.6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_ENT1" event-set__click="_event: click; _target: #rdc_entrada; position: 7 3 2" event-set__click2="_event: click; _target: #rdc_ent2; position: 0 0 0" sound="on: click; src: url(audio/and1.mp3); volume: 100" event-set__click3="_event: click; position: 99 99 99"></a-entity>
+        <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 0 1.6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_RDC_TRAINING" event-set__click="_event: click; _target: #rdc_entrada; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_training; position: 0 0 0" event-set__click3="_event: click; position: 99 99 99" scale="" visible=""></a-entity>
 
         <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 0 1.6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="0 10 -0" set-image="on: click; target: #image-360; src: #IMG_RDC_TRAINING" event-set__click="_event: click; _target: #rdc_entrada; position: 99 99 99" event-set__click3="_event: click; _target: #rdc_ent1; position: 99 99 99" event-set__click4="_event: click; _target: #rdc_ent2; position: 99 99 99" event-set__click5="_event: click; _target: #rdc_ent3; position: 99 99 99" event-set__click6="_event: click; _target: #rdc_ent4; position: 99 99 99" event-set__click7="_event: click; _target: #rdc_ent5; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_training; position: 0 0 0"></a-entity>
 
         <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-4.7 0.3 -6" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" sound="on: mouseenter; src: url(audio/2-iis.mp3); volume: 5.5"></a-entity>
       </a-entity>
 
+    <!--
       <a-entity id="rdc_ent1" position="99 99 99"> 
         <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 1.2 -3.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_ENT1" event-set__click="_event: click; _target: #rdc_ent1; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ent2; position: 0 0 0" scale="0.4 0.4 0.4" visible=""></a-entity>
       </a-entity>
@@ -464,7 +464,7 @@
         <a-entity class="link" id="gif_enter_esc" geometry="primitive:box;" position="-8 1.2 -3.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.0" rotation="0 10 -0" set-image-nofade="on: click; target: #image-360; src: #IMG_ENT5" event-set__click="_event: click; _target: #rdc_ent4; position: 7 3 2" event-set__click2="_event: click; _target: #rdc_entrada; position: 0 0 0" scale="0.4 0.4 0.4" sound="on: click; src: url(audio/and5.mp3); volume: 8" visible=""></a-entity>
       </a-entity>
 
-
+-->
       <a-entity id="rdc_training" position="99 99 99">
         <a-entity class="link" id="gif_PPS" geometry="primitive:box;" position="-8 0.5 2.5" material="shader:gif;src:url(https://media.giphy.com/media/JROrvHnpJis4U/giphy.gif);color:red;opacity:.8" rotation="-3 15 -5" set-image="on: click; target: #image-360; src: #IMG_PPISO_NOIMAGE" event-set__click="_event: click; _target: #rdc_training; position: 99 99 99" event-set__click2="_event: click; _target: #rdc_ppiso; position: 0 0 0"></a-entity>
 
