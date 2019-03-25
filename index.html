@@ -66,7 +66,7 @@
         <img id="IMG_guia" crossorigin="anonymous" src="https://i.imgur.com/wNbOLcg.jpg">
         <img id="IMG_crossmark" crossorigin="anonymous" src="https://i.imgur.com/Er8Lba5.png">
         <img id="IMG_back" crossorigin="anonymous" src="https://i.imgur.com/e6UEUwF.png">
-        <video id="VID_ricoh2020" crossorigin="anonymous" webkit-playsinline playsinline autoplay loop> 
+        <video id="VID_ricoh2020" crossorigin="anonymous" webkit-playsinline playsinline autoplay="false" loop> 
         <source type="video/mp4" src="ricoh2020.mp4" /></video>
         <video id="VID_ricohtr" crossorigin="anonymous" webkit-playsinline playsinline> 
         <source type="video/mp4" src="ricoh_tr.mp4" /></video>
@@ -313,7 +313,7 @@
 
   
       <!-- VIDEO RICOH2020 -->
-      <a-video id="vid" src="#VID_ricoh2020" width="3" height="1.6" position="0 0.8 -4" visible="false" autoplay loop rotation="3 0 1" scale="" material="" geometry="">
+      <a-video id="vid" src="#VID_ricoh2020" width="3" height="1.6" position="0 0.8 -4" visible="false" autoplay="false" loop rotation="3 0 1" scale="" material="" geometry="">
         <a-entity id="cruz_video" template="src: #TMP_close_video" data-src="#IMG_crossmark" data-thumb="#IMG_crossmark" position="1.5 1 0.1" visible="true" event-set__click="_event: click; _target: #vid; visible: false" event-set__click2="_event: click; _target: #welcomm; visible: true" event-set__click3="_event: click; _target: #ent_control; visible: false" rotation="" scale="">
         <a-entity class="link" geometry="primitive: plane; height: 0.3; width: 0.3" material="shader: flat; src: #IMG_crossmark; alpha-test: 0.5" sound="on: click; src: #SND_click-sound" animation__scale="property: scale; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: 1.01 1.01 1.01" position="" rotation="" scale="" visible="">
         </a-entity></a-entity>
